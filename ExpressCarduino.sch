@@ -266,6 +266,43 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <wire x1="1.35" y1="-0.775" x2="-1.35" y2="-0.775" width="0.127" layer="51"/>
 <wire x1="-1.35" y1="-0.775" x2="-1.35" y2="0.775" width="0.127" layer="51"/>
 </package>
+<package name="MICRO-B-RA-SMT">
+<description>Package for an SMT Micro-B connector.  Digikey part #H11613-ND
+*** Unproven***</description>
+<smd name="5" x="-1.3635" y="-1.91825" dx="1.1" dy="0.35" layer="1" rot="R90"/>
+<smd name="1" x="1.3635" y="-1.95" dx="1.1" dy="0.35" layer="1" rot="R90"/>
+<smd name="4" x="-0.68175" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<smd name="3" x="0" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<smd name="2" x="0.68175" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<text x="-3.6" y="-1.8" size="0.762" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.4905" y="-2.054" size="0.762" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="-3.4" y1="-2.7" x2="3.4" y2="-2.7" width="0.127" layer="21"/>
+<wire x1="3.4" y1="-2.7" x2="3.4" y2="-12.8" width="0.127" layer="51"/>
+<wire x1="-3.4" y1="-2.7" x2="-3.4" y2="-12.8" width="0.127" layer="51"/>
+<wire x1="3.4" y1="3.3" x2="3.4" y2="-2.7" width="0.127" layer="21"/>
+<wire x1="-3.3945" y1="3.3635" x2="-3.3945" y2="-2.6365" width="0.127" layer="21"/>
+<wire x1="-3.39725" y1="3.39725" x2="3.39725" y2="3.39725" width="0.127" layer="21"/>
+<wire x1="3.39725" y1="3.39725" x2="3.39725" y2="3.302" width="0.127" layer="51"/>
+<wire x1="-3.3655" y1="-12.8905" x2="3.3655" y2="-12.8905" width="0.127" layer="51"/>
+</package>
+<package name="MICRO-B-TH">
+<description>&lt;h3&gt;Micro B USB Plug Assembly - Straight Through-hole&lt;/h3&gt;
+&lt;b&gt;**UNPROVEN**&lt;/b&gt;&lt;Br&gt;
+See Digikey part #H11497-ND</description>
+<wire x1="-5.125" y1="-2.1" x2="5.125" y2="-2.1" width="0.127" layer="51"/>
+<wire x1="-5.125" y1="2.1" x2="5.125" y2="2.1" width="0.127" layer="51"/>
+<wire x1="-5.125" y1="-2.1" x2="-5.125" y2="2.1" width="0.127" layer="51"/>
+<wire x1="5.125" y1="-2.1" x2="5.125" y2="2.1" width="0.127" layer="51"/>
+<pad name="1" x="-1.3" y="-0.775" drill="0.6" diameter="1"/>
+<pad name="3" x="0" y="-0.775" drill="0.6" diameter="1"/>
+<pad name="5" x="1.3" y="-0.775" drill="0.6" diameter="1"/>
+<pad name="4" x="0.65" y="0.775" drill="0.6" diameter="1"/>
+<pad name="2" x="-0.65" y="0.775" drill="0.6" diameter="1"/>
+<pad name="P$1" x="-4.1" y="0" drill="1.2" rot="R90"/>
+<pad name="P$2" x="4.1" y="0" drill="1.2" rot="R90"/>
+<text x="-5.08" y="2.286" size="0.381" layer="25">&gt;Name</text>
+<text x="-5.08" y="-2.667" size="0.381" layer="27">&gt;Value</text>
+</package>
 </packages>
 <symbols>
 <symbol name="EXPRESSCARD34">
@@ -324,6 +361,19 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <pin name="C" x="2.54" y="0" visible="off" length="point" direction="pas" rot="R180"/>
 <wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.1524" layer="94"/>
 <wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.1524" layer="94"/>
+</symbol>
+<symbol name="MICROB-PLUG">
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="5.08" y2="-7.62" width="0.508" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="5.08" y2="7.62" width="0.508" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="-5.08" y2="7.62" width="0.508" layer="94"/>
+<text x="-4.826" y="8.128" size="1.778" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-9.906" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VCC" x="-7.62" y="5.08" length="short"/>
+<pin name="D-" x="-7.62" y="2.54" length="short"/>
+<pin name="D+" x="-7.62" y="0" length="short"/>
+<pin name="ID" x="-7.62" y="-2.54" length="short"/>
+<pin name="GND" x="-7.62" y="-5.08" length="short"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -466,6 +516,39 @@ B340A  3A 40V SMA &lt;br&gt;</description>
 <connects>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="USB_MICROB_PLUG" prefix="JP" uservalue="yes">
+<description>USB Micro-B connectors&lt;br&gt;
+Some male, some female. Watch your step!</description>
+<gates>
+<gate name="G$1" symbol="MICROB-PLUG" x="0" y="0"/>
+</gates>
+<devices>
+<device name="&quot;" package="MICRO-B-RA-SMT">
+<connects>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="-PTH2" package="MICRO-B-TH">
+<connects>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1357,6 +1440,7 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <part name="C2" library="SparkFun-Capacitors" deviceset="1.0UF-16V-10%(0603)" device="" value="1.0uF"/>
 <part name="L1" library="SparkFun-Passives" deviceset="INDUCTOR" device="SDR0403-560KL" value="56uH"/>
 <part name="D1" library="HokieGeek" deviceset="DIODE-SCHOTTKY" device="" value="1N5819"/>
+<part name="USB" library="HokieGeek" deviceset="USB_MICROB_PLUG" device="&quot;"/>
 </parts>
 <sheets>
 <sheet>
@@ -1373,6 +1457,7 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <instance part="C2" gate="G$1" x="33.02" y="22.86"/>
 <instance part="L1" gate="G$1" x="48.26" y="50.8" rot="R90"/>
 <instance part="D1" gate="G$1" x="63.5" y="50.8"/>
+<instance part="USB" gate="G$1" x="78.74" y="68.58" rot="MR180"/>
 </instances>
 <busses>
 </busses>
@@ -1408,16 +1493,28 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <junction x="35.56" y="35.56"/>
 </segment>
 </net>
-<net name="N$4" class="0">
+<net name="USBD-" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="USBD-"/>
-<wire x1="15.24" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="66.04" x2="25.4" y2="66.04" width="0.1524" layer="91"/>
+<label x="25.4" y="66.04" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="USB" gate="G$1" pin="D-"/>
+<wire x1="71.12" y1="66.04" x2="66.04" y2="66.04" width="0.1524" layer="91"/>
+<label x="63.5" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="USBD+" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="USBD+"/>
-<wire x1="15.24" y1="63.5" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="63.5" x2="25.4" y2="63.5" width="0.1524" layer="91"/>
+<label x="25.4" y="63.5" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="USB" gate="G$1" pin="D+"/>
+<wire x1="71.12" y1="68.58" x2="66.04" y2="68.58" width="0.1524" layer="91"/>
+<label x="63.5" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -1426,9 +1523,10 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <wire x1="15.24" y1="60.96" x2="17.78" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="GND_A"/>
 <wire x1="15.24" y1="68.58" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="68.58" x2="35.56" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="68.58" x2="25.4" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="60.96" x2="17.78" y2="68.58" width="0.1524" layer="91"/>
 <junction x="17.78" y="68.58"/>
+<label x="25.4" y="68.58" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$1" pin="GND_D"/>
@@ -1460,6 +1558,11 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="55.88" y1="15.24" x2="33.02" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="15.24" x2="33.02" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="USB" gate="G$1" pin="GND"/>
+<wire x1="71.12" y1="73.66" x2="66.04" y2="73.66" width="0.1524" layer="91"/>
+<label x="63.5" y="73.66" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="1.5V" class="0">
@@ -1498,6 +1601,11 @@ INDUCTOR POWER 3.3UH 4.0A SMD&lt;br&gt;
 <pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="76.2" y1="50.8" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
 <label x="88.9" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="USB" gate="G$1" pin="VCC"/>
+<wire x1="71.12" y1="63.5" x2="66.04" y2="63.5" width="0.1524" layer="91"/>
+<label x="63.5" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$3" class="0">

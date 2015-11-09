@@ -140,14 +140,14 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="23" y2="0" width="0" layer="20"/>
-<wire x1="23" y1="0" x2="23" y2="27.73" width="0" layer="20"/>
-<wire x1="23" y1="27.73" x2="0" y2="27.73" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="17.285" y2="0" width="0" layer="20"/>
+<wire x1="17.285" y1="0" x2="17.285" y2="27.73" width="0" layer="20"/>
+<wire x1="17.285" y1="27.73" x2="0" y2="27.73" width="0" layer="20"/>
 <wire x1="0" y1="27.73" x2="0" y2="0" width="0" layer="20"/>
-<rectangle x1="19.05" y1="5.08" x2="63.05" y2="23.08" layer="51"/>
-<text x="33.02" y="24.13" size="1.778" layer="51">Arduino Metro</text>
+<rectangle x1="19.05" y1="5.08" x2="63.05" y2="23.08" layer="41"/>
+<text x="28.2575" y="23.1775" size="1.778" layer="51">Adafruit Metro Mini 328</text>
 <dimension x1="65.2275" y1="-0.3175" x2="65.2275" y2="27.4125" x3="68.5364875" y3="13.5475" textsize="1.778" layer="51"/>
-<dimension x1="0" y1="27.73" x2="65.0875" y2="27.6225" x3="32.5484875" y3="30.546021875" textsize="1.778" layer="51"/>
+<dimension x1="0" y1="27.73" x2="65.0875" y2="27.73" x3="32.54375" y3="30.546021875" textsize="1.778" layer="51"/>
 </plain>
 <libraries>
 <library name="HokieGeek">
@@ -220,6 +220,25 @@
 <wire x1="1.35" y1="0.775" x2="1.35" y2="-0.775" width="0.127" layer="51"/>
 <wire x1="1.35" y1="-0.775" x2="-1.35" y2="-0.775" width="0.127" layer="51"/>
 <wire x1="-1.35" y1="-0.775" x2="-1.35" y2="0.775" width="0.127" layer="51"/>
+</package>
+<package name="MICRO-B-RA-SMT">
+<description>Package for an SMT Micro-B connector.  Digikey part #H11613-ND
+*** Unproven***</description>
+<smd name="5" x="-1.3635" y="-1.91825" dx="1.1" dy="0.35" layer="1" rot="R90"/>
+<smd name="1" x="1.3635" y="-1.95" dx="1.1" dy="0.35" layer="1" rot="R90"/>
+<smd name="4" x="-0.68175" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<smd name="3" x="0" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<smd name="2" x="0.68175" y="-1.75" dx="1.5" dy="0.35" layer="1" rot="R90"/>
+<text x="-3.6" y="-1.8" size="0.762" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.4905" y="-2.054" size="0.762" layer="27" rot="R90">&gt;VALUE</text>
+<wire x1="-3.4" y1="-2.7" x2="3.4" y2="-2.7" width="0.127" layer="21"/>
+<wire x1="3.4" y1="-2.7" x2="3.4" y2="-12.8" width="0.127" layer="51"/>
+<wire x1="-3.4" y1="-2.7" x2="-3.4" y2="-12.8" width="0.127" layer="51"/>
+<wire x1="3.4" y1="3.3" x2="3.4" y2="-2.7" width="0.127" layer="21"/>
+<wire x1="-3.3945" y1="3.3635" x2="-3.3945" y2="-2.6365" width="0.127" layer="21"/>
+<wire x1="-3.39725" y1="3.39725" x2="3.39725" y2="3.39725" width="0.127" layer="21"/>
+<wire x1="3.39725" y1="3.39725" x2="3.39725" y2="3.302" width="0.127" layer="51"/>
+<wire x1="-3.3655" y1="-12.8905" x2="3.3655" y2="-12.8905" width="0.127" layer="51"/>
 </package>
 </packages>
 </library>
@@ -385,7 +404,7 @@ Please make sure your boards conform to these design rules.</description>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
 <param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
+<param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="a"/>
@@ -479,26 +498,27 @@ Please make sure your boards conform to these design rules.</description>
 </autorouter>
 <elements>
 <element name="U$1" library="HokieGeek" package="EXPRESSCARD34" value="EXPRESSCARD34" x="1.5875" y="13.97"/>
-<element name="R1" library="SparkFun-Resistors" package="0805" value="41.2K" x="9.525" y="11.1125" rot="R90">
-<attribute name="PROD_ID" value="RES-09883" x="9.525" y="11.1125" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="R1" library="SparkFun-Resistors" package="0805" value="41.2K" x="13.0175" y="2.54" rot="R90">
+<attribute name="PROD_ID" value="RES-09883" x="13.0175" y="2.54" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="R2" library="SparkFun-Resistors" package="0805" value="6.5K" x="9.525" y="7.3025" rot="R90">
-<attribute name="PROD_ID" value="RES-09883" x="9.525" y="7.3025" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="R2" library="SparkFun-Resistors" package="0805" value="6.5K" x="15.24" y="2.54" rot="R90">
+<attribute name="PROD_ID" value="RES-09883" x="15.24" y="2.54" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U1" library="HokieGeek" package="SOT23-5" value="74LVC1G08" x="5.715" y="7.62" rot="R180">
-<attribute name="PROD_ID" value="10841" x="5.715" y="7.62" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="U1" library="HokieGeek" package="SOT23-5" value="74LVC1G08" x="4.7625" y="7.62" rot="R180">
+<attribute name="PROD_ID" value="10841" x="4.7625" y="7.62" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Capacitors" package="0603-CAP" value="1.0uF" x="6.985" y="12.065" rot="R90">
-<attribute name="PROD_ID" value="CAP-00868" x="6.985" y="12.065" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="C1" library="SparkFun-Capacitors" package="0603-CAP" value="1.0uF" x="10.795" y="7.3025" rot="R90">
+<attribute name="PROD_ID" value="CAP-00868" x="10.795" y="7.3025" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="C2" library="SparkFun-Capacitors" package="0603-CAP" value="1.0uF" x="4.445" y="12.065" rot="R270">
-<attribute name="PROD_ID" value="CAP-00868" x="4.445" y="12.065" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C2" library="SparkFun-Capacitors" package="0603-CAP" value="1.0uF" x="8.255" y="7.3025" rot="R90">
+<attribute name="PROD_ID" value="CAP-00868" x="8.255" y="7.3025" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="L1" library="SparkFun-Passives" package="SDR0403" value="56uH" x="6.35" y="2.8575">
 <attribute name="DIST_ID" value="SDR0403-560KLCT-ND" x="6.35" y="2.8575" size="1.778" layer="27" display="off"/>
 <attribute name="DIST" value="DIGIKEY" x="6.35" y="2.8575" size="1.778" layer="27" display="off"/>
 </element>
-<element name="D1" library="HokieGeek" package="SOD-123" value="1N5819" x="11.7475" y="2.8575" rot="R270"/>
+<element name="D1" library="HokieGeek" package="SOD-123" value="1N5819" x="10.4775" y="2.8575" rot="R270"/>
+<element name="USB" library="HokieGeek" package="MICRO-B-RA-SMT" value="" x="11.43" y="14.2875" rot="R90"/>
 </elements>
 <signals>
 <signal name="3.3V_AUX">
@@ -514,17 +534,21 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="C2" pad="1"/>
 <contactref element="L1" pad="P$1"/>
 <contactref element="U1" pad="4"/>
-<wire x1="1.5216375" y1="14.322471875" x2="4.445" y2="12.915" width="0" layer="19" extent="1-1"/>
-<wire x1="4.765" y1="6.3199" x2="4.445" y2="12.915" width="0" layer="19" extent="1-1"/>
-<wire x1="6.665" y1="6.3199" x2="4.765" y2="6.3199" width="0" layer="19" extent="1-1"/>
-<wire x1="1.5216375" y1="5.178471875" x2="4.765" y2="6.3199" width="0" layer="19" extent="1-1"/>
-<wire x1="4.7" y1="2.8575" x2="4.765" y2="6.3199" width="0" layer="19" extent="1-1"/>
+<wire x1="3.8125" y1="6.3199" x2="1.5216375" y2="14.322471875" width="0" layer="19" extent="1-1"/>
+<wire x1="5.7125" y1="6.3199" x2="3.8125" y2="6.3199" width="0" layer="19" extent="1-1"/>
+<wire x1="8.255" y1="6.4525" x2="5.7125" y2="6.3199" width="0" layer="19" extent="1-1"/>
+<wire x1="1.5216375" y1="5.178471875" x2="3.8125" y2="6.3199" width="0" layer="19" extent="1-1"/>
+<wire x1="4.7" y1="2.8575" x2="3.8125" y2="6.3199" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$4">
+<signal name="USBD-">
 <contactref element="U$1" pad="P$2"/>
+<contactref element="USB" pad="2"/>
+<wire x1="1.5216375" y1="2.130471875" x2="13.18" y2="14.96925" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$5">
+<signal name="USBD+">
 <contactref element="U$1" pad="P$3"/>
+<contactref element="USB" pad="3"/>
+<wire x1="1.5216375" y1="3.146471875" x2="13.18" y2="14.2875" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="P$4"/>
@@ -536,14 +560,16 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R2" pad="1"/>
 <contactref element="C1" pad="2"/>
 <contactref element="C2" pad="2"/>
+<contactref element="USB" pad="5"/>
 <wire x1="1.5216375" y1="23.466471875" x2="1.5216375" y2="26.514471875" width="0" layer="19" extent="1-1"/>
 <wire x1="1.5216375" y1="20.418471875" x2="1.5216375" y2="23.466471875" width="0" layer="19" extent="1-1"/>
-<wire x1="6.985" y1="12.915" x2="1.5216375" y2="20.418471875" width="0" layer="19" extent="1-1"/>
-<wire x1="4.445" y1="11.215" x2="6.985" y2="12.915" width="0" layer="19" extent="1-1"/>
-<wire x1="5.715" y1="8.9201" x2="4.445" y2="11.215" width="0" layer="19" extent="1-1"/>
-<wire x1="9.525" y1="6.4025" x2="5.715" y2="8.9201" width="0" layer="19" extent="1-1"/>
-<wire x1="1.5216375" y1="4.162471875" x2="5.715" y2="8.9201" width="0" layer="19" extent="1-1"/>
+<wire x1="4.7625" y1="8.9201" x2="1.5216375" y2="20.418471875" width="0" layer="19" extent="1-1"/>
+<wire x1="8.255" y1="8.1525" x2="4.7625" y2="8.9201" width="0" layer="19" extent="1-1"/>
+<wire x1="10.795" y1="8.1525" x2="8.255" y2="8.1525" width="0" layer="19" extent="1-1"/>
+<wire x1="13.34825" y1="12.924" x2="10.795" y2="8.1525" width="0" layer="19" extent="1-1"/>
+<wire x1="1.5216375" y1="4.162471875" x2="4.7625" y2="8.9201" width="0" layer="19" extent="1-1"/>
 <wire x1="1.5216375" y1="1.114471875" x2="1.5216375" y2="4.162471875" width="0" layer="19" extent="1-1"/>
+<wire x1="15.24" y1="1.64" x2="10.795" y2="8.1525" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="1.5V">
 <contactref element="U$1" pad="P$10"/>
@@ -554,22 +580,24 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="U1" pad="3"/>
 <contactref element="R2" pad="2"/>
 <contactref element="R1" pad="1"/>
-<wire x1="9.525" y1="8.2025" x2="9.525" y2="10.2125" width="0" layer="19" extent="1-1"/>
-<wire x1="4.765" y1="8.9201" x2="9.525" y2="8.2025" width="0" layer="19" extent="1-1"/>
+<wire x1="13.0175" y1="1.64" x2="15.24" y2="3.44" width="0" layer="19" extent="1-1"/>
+<wire x1="3.8125" y1="8.9201" x2="13.0175" y2="1.64" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="9V">
 <contactref element="R1" pad="2"/>
 <contactref element="C1" pad="1"/>
 <contactref element="D1" pad="C"/>
-<wire x1="6.985" y1="11.215" x2="9.525" y2="12.0125" width="0" layer="19" extent="1-1"/>
-<wire x1="11.7475" y1="4.4325" x2="6.985" y2="11.215" width="0" layer="19" extent="1-1"/>
+<contactref element="USB" pad="1"/>
+<wire x1="10.795" y1="6.4525" x2="13.38" y2="15.651" width="0" layer="19" extent="1-1"/>
+<wire x1="10.4775" y1="4.4325" x2="10.795" y2="6.4525" width="0" layer="19" extent="1-1"/>
+<wire x1="13.0175" y1="3.44" x2="10.4775" y2="4.4325" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="D1" pad="A"/>
 <contactref element="L1" pad="P$2"/>
 <contactref element="U1" pad="1"/>
-<wire x1="8" y1="2.8575" x2="6.665" y2="8.9201" width="0" layer="19" extent="1-1"/>
-<wire x1="11.7475" y1="1.2825" x2="8" y2="2.8575" width="0" layer="19" extent="1-1"/>
+<wire x1="8" y1="2.8575" x2="5.7125" y2="8.9201" width="0" layer="19" extent="1-1"/>
+<wire x1="10.4775" y1="1.2825" x2="8" y2="2.8575" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
