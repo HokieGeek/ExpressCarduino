@@ -656,32 +656,32 @@ thin small outline package</description>
 </packages>
 <symbols>
 <symbol name="EXPRESSCARD34">
-<pin name="GND_A" x="2.54" y="30.48" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND_A" x="2.54" y="30.48" length="middle" direction="sup" rot="R180"/>
 <pin name="USBD-" x="2.54" y="27.94" length="middle" rot="R180"/>
 <pin name="USBD+" x="2.54" y="25.4" length="middle" rot="R180"/>
-<pin name="CPUSB#" x="2.54" y="22.86" length="middle" direction="out" rot="R180"/>
-<pin name="USB3#" x="2.54" y="20.32" length="middle" rot="R180"/>
-<pin name="RESERVED" x="2.54" y="17.78" length="middle" rot="R180"/>
+<pin name="CPUSB#" x="2.54" y="22.86" length="middle" direction="in" rot="R180"/>
+<pin name="USB3#" x="2.54" y="20.32" length="middle" direction="in" rot="R180"/>
+<pin name="RESERVED" x="2.54" y="17.78" length="middle" direction="nc" rot="R180"/>
 <pin name="SMBCLK" x="2.54" y="15.24" length="middle" rot="R180"/>
 <pin name="SMBDATA" x="2.54" y="12.7" length="middle" rot="R180"/>
-<pin name="1.5V_A" x="2.54" y="10.16" length="middle" direction="pwr" rot="R180"/>
-<pin name="1.5V_B" x="2.54" y="7.62" length="middle" direction="pwr" rot="R180"/>
-<pin name="WAKE#" x="2.54" y="5.08" length="middle" direction="out" rot="R180"/>
-<pin name="3.3V_AUX" x="2.54" y="2.54" length="middle" direction="pwr" rot="R180"/>
-<pin name="PERST#" x="2.54" y="0" length="middle" direction="in" rot="R180"/>
-<pin name="3.3V_A" x="2.54" y="-2.54" length="middle" direction="pwr" rot="R180"/>
-<pin name="3.3V_B" x="2.54" y="-5.08" length="middle" direction="pwr" rot="R180"/>
-<pin name="CLKREQ#" x="2.54" y="-7.62" length="middle" direction="out" rot="R180"/>
-<pin name="CPPE#" x="2.54" y="-10.16" length="middle" direction="out" rot="R180"/>
-<pin name="REFCLK-" x="2.54" y="-12.7" length="middle" direction="in" rot="R180"/>
-<pin name="REFCLK+" x="2.54" y="-15.24" length="middle" direction="in" rot="R180"/>
-<pin name="GND_B" x="2.54" y="-17.78" length="middle" direction="pwr" rot="R180"/>
-<pin name="PERN0/SSRX-" x="2.54" y="-20.32" length="middle" direction="out" rot="R180"/>
-<pin name="PERP0/SSRX+" x="2.54" y="-22.86" length="middle" direction="out" rot="R180"/>
-<pin name="GND_C" x="2.54" y="-25.4" length="middle" direction="pwr" rot="R180"/>
-<pin name="PETN0/SSTX-" x="2.54" y="-27.94" length="middle" direction="in" rot="R180"/>
-<pin name="PETP0/SSTX+" x="2.54" y="-30.48" length="middle" direction="in" rot="R180"/>
-<pin name="GND_D" x="2.54" y="-33.02" length="middle" direction="pwr" rot="R180"/>
+<pin name="1.5V_A" x="2.54" y="10.16" length="middle" direction="sup" rot="R180"/>
+<pin name="1.5V_B" x="2.54" y="7.62" length="middle" direction="sup" rot="R180"/>
+<pin name="WAKE#" x="2.54" y="5.08" length="middle" direction="in" rot="R180"/>
+<pin name="3.3V_AUX" x="2.54" y="2.54" length="middle" direction="sup" rot="R180"/>
+<pin name="PERST#" x="2.54" y="0" length="middle" direction="out" rot="R180"/>
+<pin name="3.3V_A" x="2.54" y="-2.54" length="middle" direction="sup" rot="R180"/>
+<pin name="3.3V_B" x="2.54" y="-5.08" length="middle" direction="sup" rot="R180"/>
+<pin name="CLKREQ#" x="2.54" y="-7.62" length="middle" direction="in" rot="R180"/>
+<pin name="CPPE#" x="2.54" y="-10.16" length="middle" direction="in" rot="R180"/>
+<pin name="REFCLK-" x="2.54" y="-12.7" length="middle" direction="out" rot="R180"/>
+<pin name="REFCLK+" x="2.54" y="-15.24" length="middle" direction="out" rot="R180"/>
+<pin name="GND_B" x="2.54" y="-17.78" length="middle" direction="sup" rot="R180"/>
+<pin name="PERN0/SSRX-" x="2.54" y="-20.32" length="middle" direction="in" rot="R180"/>
+<pin name="PERP0/SSRX+" x="2.54" y="-22.86" length="middle" direction="in" rot="R180"/>
+<pin name="GND_C" x="2.54" y="-25.4" length="middle" direction="sup" rot="R180"/>
+<pin name="PETN0/SSTX-" x="2.54" y="-27.94" length="middle" direction="out" rot="R180"/>
+<pin name="PETP0/SSTX+" x="2.54" y="-30.48" length="middle" direction="out" rot="R180"/>
+<pin name="GND_D" x="2.54" y="-33.02" length="middle" direction="sup" rot="R180"/>
 </symbol>
 <symbol name="AP3012">
 <text x="-5.08" y="8.382" size="1.778" layer="95">&gt;NAME</text>
@@ -3993,13 +3993,11 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <part name="R2" library="SparkFun-Resistors" deviceset="0.22OHM-1/4W-1%(0805)" device="" value="6.5K"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="HokieGeek" deviceset="AP3012" device="" value="AP3012"/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="SparkFun-Capacitors" deviceset="1.0UF-16V-10%(0603)" device="" value="1.0uF"/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="1.0UF-16V-10%(0603)" device="" value="1.0uF"/>
 <part name="L1" library="SparkFun-Passives" deviceset="INDUCTOR" device="SDR0403-560KL" value="56uH"/>
 <part name="D1" library="HokieGeek" deviceset="DIODE-SCHOTTKY" device="" value="1N5819"/>
 <part name="USB" library="HokieGeek" deviceset="USB_MICROB_PLUG" device="&quot;"/>
-<part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GPIO" library="SparkFun-Connectors" deviceset="M08" device=""/>
@@ -4019,13 +4017,11 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <instance part="R2" gate="G$1" x="99.06" y="17.78" rot="R90"/>
 <instance part="GND1" gate="1" x="17.78" y="22.86"/>
 <instance part="U1" gate="G$1" x="73.66" y="25.4"/>
-<instance part="GND2" gate="1" x="78.74" y="2.54"/>
 <instance part="C1" gate="G$1" x="106.68" y="25.4"/>
 <instance part="C2" gate="G$1" x="55.88" y="17.78"/>
 <instance part="L1" gate="G$1" x="71.12" y="45.72" rot="R90"/>
 <instance part="D1" gate="G$1" x="86.36" y="45.72"/>
 <instance part="USB" gate="G$1" x="127" y="50.8" rot="MR180"/>
-<instance part="GND3" gate="1" x="17.78" y="93.98" rot="R180"/>
 <instance part="GND4" gate="1" x="66.04" y="71.12"/>
 <instance part="GND5" gate="1" x="127" y="76.2"/>
 <instance part="GPIO" gate="G$1" x="88.9" y="101.6" rot="R180"/>
@@ -4038,11 +4034,25 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <busses>
 </busses>
 <nets>
-<net name="3.3V_B" class="0">
+<net name="VCC" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="3.3V_B"/>
 <wire x1="15.24" y1="55.88" x2="22.86" y2="55.88" width="0.1524" layer="91"/>
 <label x="22.86" y="55.88" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="VCC"/>
+<wire x1="127" y1="116.84" x2="127" y2="119.38" width="0.1524" layer="91"/>
+<label x="127" y="119.38" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC2" gate="G$1" pin="VCC"/>
+<wire x1="66.04" y1="119.38" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
+<label x="66.04" y="121.92" size="1.778" layer="95"/>
+<junction x="66.04" y="119.38"/>
+<pinref part="IC2" gate="G$1" pin="/RST"/>
+<wire x1="66.04" y1="119.38" x2="50.8" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="119.38" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USBD-" class="0">
@@ -4071,15 +4081,6 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="CPUSB#"/>
-<wire x1="15.24" y1="83.82" x2="17.78" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND_A"/>
-<wire x1="15.24" y1="91.44" x2="17.78" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="83.82" x2="17.78" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="GND3" gate="1" pin="GND"/>
-<junction x="17.78" y="91.44"/>
-</segment>
-<segment>
 <pinref part="U$1" gate="G$1" pin="GND_D"/>
 <wire x1="15.24" y1="27.94" x2="17.78" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="27.94" x2="17.78" y2="25.4" width="0.1524" layer="91"/>
@@ -4092,23 +4093,6 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <junction x="17.78" y="35.56"/>
 <junction x="17.78" y="27.94"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="78.74" y1="5.08" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="10.16" x2="78.74" y2="15.24" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="10.16" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="12.7" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="10.16" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
-<junction x="78.74" y="10.16"/>
-<junction x="99.06" y="10.16"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="78.74" y1="10.16" x2="55.88" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="10.16" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="USB" gate="G$1" pin="GND"/>
@@ -4191,7 +4175,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <junction x="81.28" y="45.72"/>
 </segment>
 </net>
-<net name="3.3V_A" class="0">
+<net name="VUSB" class="0">
 <segment>
 <pinref part="U$1" gate="G$1" pin="3.3V_A"/>
 <wire x1="15.24" y1="58.42" x2="22.86" y2="58.42" width="0.1524" layer="91"/>
@@ -4213,20 +4197,6 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <junction x="58.42" y="30.48"/>
 <wire x1="55.88" y1="30.48" x2="48.26" y2="30.48" width="0.1524" layer="91"/>
 <label x="43.18" y="30.48" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="66.04" y1="119.38" x2="66.04" y2="121.92" width="0.1524" layer="91"/>
-<label x="68.58" y="121.92" size="1.778" layer="95"/>
-<pinref part="IC2" gate="G$1" pin="VCC"/>
-<pinref part="IC2" gate="G$1" pin="/RST"/>
-<wire x1="66.04" y1="119.38" x2="50.8" y2="119.38" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="119.38" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
-<junction x="66.04" y="119.38"/>
-</segment>
-<segment>
-<wire x1="127" y1="116.84" x2="127" y2="121.92" width="0.1524" layer="91"/>
-<label x="127" y="121.92" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="U$2" gate="G$1" pin="!EN"/>
@@ -4375,9 +4345,62 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 <wire x1="111.76" y1="101.6" x2="111.76" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
+<net name="GND_USB" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="GND"/>
+<wire x1="78.74" y1="5.08" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="10.16" x2="78.74" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="10.16" x2="106.68" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="99.06" y1="12.7" x2="99.06" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="10.16" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
+<junction x="78.74" y="10.16"/>
+<junction x="99.06" y="10.16"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="78.74" y1="10.16" x2="55.88" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="10.16" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
+<label x="78.74" y="5.08" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND_A"/>
+<wire x1="15.24" y1="91.44" x2="17.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="91.44" x2="17.78" y2="96.52" width="0.1524" layer="91"/>
+<junction x="17.78" y="91.44"/>
+<pinref part="U$1" gate="G$1" pin="CPUSB#"/>
+<wire x1="15.24" y1="83.82" x2="17.78" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="91.44" x2="17.78" y2="83.82" width="0.1524" layer="91"/>
+<label x="30.48" y="96.52" size="1.778" layer="95" rot="R180"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="102,1,15.24,91.44,GND_A,GND_USB,,,,"/>
+<approved hash="102,1,15.24,71.12,1.5V_A,1.5V,,,,"/>
+<approved hash="102,1,15.24,68.58,1.5V_B,1.5V,,,,"/>
+<approved hash="102,1,15.24,58.42,3.3V_A,VUSB,,,,"/>
+<approved hash="102,1,15.24,55.88,3.3V_B,VCC,,,,"/>
+<approved hash="102,1,15.24,43.18,GND_B,GND,,,,"/>
+<approved hash="102,1,15.24,35.56,GND_C,GND,,,,"/>
+<approved hash="102,1,15.24,27.94,GND_D,GND,,,,"/>
+<approved hash="202,1,15.24,81.28,U$1,USB3#,,,,"/>
+<approved hash="202,1,15.24,66.04,U$1,WAKE#,,,,"/>
+<approved hash="202,1,15.24,53.34,U$1,CLKREQ#,,,,"/>
+<approved hash="202,1,15.24,50.8,U$1,CPPE#,,,,"/>
+<approved hash="202,1,15.24,40.64,U$1,PERN0/SSRX-,,,,"/>
+<approved hash="202,1,15.24,38.1,U$1,PERP0/SSRX+,,,,"/>
+<approved hash="104,1,78.74,15.24,U1,GND,GND_USB,,,"/>
+<approved hash="104,1,60.96,30.48,U1,VIN,VUSB,,,"/>
+<approved hash="117,1,15.24,63.5,3.3V_AUX,,,,,"/>
+<approved hash="113,1,123.698,49.4877,USB,,,,,"/>
+<approved hash="113,1,87.0373,98.8653,GPIO,,,,,"/>
+<approved hash="113,1,145.457,98.8653,ADC,,,,,"/>
+<approved hash="113,1,47.5827,99.2547,GPIO_I2C,,,,,"/>
+<approved hash="113,1,108.543,106.875,ADC_SEL,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
