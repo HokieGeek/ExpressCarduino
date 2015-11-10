@@ -1,5 +1,5 @@
 # ExpressCardiuno
-My attempt to get some usefulness out of unused ports on my laptop
+My attempt to get some usefulness out of unused ports on my laptop by making use of the [ExpressCard slot](http://www.usb.org/developers/expresscard/EC_specifications/ExpressCard_2_0_FINAL.pdf) and adapting it to have [Adafruit's Metro Mini Arduino clone](https://www.adafruit.com/products/2590)
 
 ## Schematic and board
 
