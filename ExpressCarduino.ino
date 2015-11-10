@@ -29,6 +29,9 @@ int secondSensor = 0;   // second analog sensor
 int thirdSensor = 0;    // digital sensor
 int inByte = 0;         // incoming serial byte
 
+String inputString = "";
+boolean stringComplete = false;
+
 void setup()
 {
   // start serial port at 9600 bps:
@@ -36,10 +39,20 @@ void setup()
 
   pinMode(2, INPUT);   // digital sensor is on digital pin 2
   establishContact();  // send a byte to establish contact until receiver responds
+  
+  inputString.reserve(200); // Reserve 200 bytes
 }
 
 void loop()
 {
+  serialEvent();
+  
+  if (stringComplete) {
+    Serial.println(inputString);
+    inputString = "";
+    stringComplete = false;
+  }
+  
   // if we get a valid byte, read analog ins:
   if (Serial.available() > 0) {
     // get incoming byte:
@@ -67,127 +80,11 @@ void establishContact() {
 }
 
 /*
-Processing sketch to run with this example:
-
-// This example code is in the public domain.
-
-import processing.serial.*;
-
-int bgcolor;			     // Background color
-int fgcolor;			     // Fill color
-Serial myPort;                       // The serial port
-int[] serialInArray = new int[3];    // Where we'll put what we receive
-int serialCount = 0;                 // A count of how many bytes we receive
-int xpos, ypos;		             // Starting position of the ball
-boolean firstContact = false;        // Whether we've heard from the microcontroller
-
-void setup() {
-  size(256, 256);  // Stage size
-  noStroke();      // No border on the next thing drawn
-
-  // Set the starting position of the ball (middle of the stage)
-  xpos = width/2;
-  ypos = height/2;
-
-  // Print a list of the serial ports for debugging purposes
-  // if using Processing 2.1 or later, use Serial.printArray()
-  println(Serial.list());
-
-  // I know that the first port in the serial list on my mac
-  // is always my  FTDI adaptor, so I open Serial.list()[0].
-  // On Windows machines, this generally opens COM1.
-  // Open whatever port is the one you're using.
-  String portName = Serial.list()[0];
-  myPort = new Serial(this, portName, 9600);
-}
-
-void draw() {
-  background(bgcolor);
-  fill(fgcolor);
-  // Draw the shape
-  ellipse(xpos, ypos, 20, 20);
-}
-
-void serialEvent(Serial myPort) {
-  // read a byte from the serial port:
-  int inByte = myPort.read();
-  // if this is the first byte received, and it's an A,
-  // clear the serial buffer and note that you've
-  // had first contact from the microcontroller.
-  // Otherwise, add the incoming byte to the array:
-  if (firstContact == false) {
-    if (inByte == 'A') {
-      myPort.clear();          // clear the serial port buffer
-      firstContact = true;     // you've had first contact from the microcontroller
-      myPort.write('A');       // ask for more
-    }
-  }
-  else {
-    // Add the latest byte from the serial port to array:
-    serialInArray[serialCount] = inByte;
-    serialCount++;
-
-    // If we have 3 bytes:
-    if (serialCount > 2 ) {
-      xpos = serialInArray[0];
-      ypos = serialInArray[1];
-      fgcolor = serialInArray[2];
-
-      // print the values (for debugging purposes only):
-      println(xpos + "\t" + ypos + "\t" + fgcolor);
-
-      // Send a capital A to request new sensor readings:
-      myPort.write('A');
-      // Reset serialCount:
-      serialCount = 0;
-    }
-  }
-}
-*/
-
-/*
-  Serial Event example
-
- When new serial data arrives, this sketch adds it to a String.
- When a newline is received, the loop prints the string and
- clears it.
-
- A good test for this is to try it with a GPS receiver
- that sends out NMEA 0183 sentences.
-
- Created 9 May 2011
- by Tom Igoe
-
- This example code is in the public domain.
-
- http://www.arduino.cc/en/Tutorial/SerialEvent
-
-
-String inputString = "";         // a string to hold incoming data
-boolean stringComplete = false;  // whether the string is complete
-
-void setup() {
-  // initialize serial:
-  Serial.begin(9600);
-  // reserve 200 bytes for the inputString:
-  inputString.reserve(200);
-}
-
-void loop() {
-  serialEvent(); //call the function
-  // print the string when a newline arrives:
-  if (stringComplete) {
-    Serial.println(inputString);
-    // clear the string:
-    inputString = "";
-    stringComplete = false;
-  }
-}
-
-  SerialEvent occurs whenever a new data comes in the
+SerialEvent occurs whenever a new data comes in the
  hardware serial RX.  This routine is run between each
  time loop() runs, so using delay inside loop can delay
  response.  Multiple bytes of data may be available.
+*/
 void serialEvent() {
   while (Serial.available()) {
     // get the new byte:
@@ -201,5 +98,3 @@ void serialEvent() {
     }
   }
 }
-
-*/
