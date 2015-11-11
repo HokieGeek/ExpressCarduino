@@ -156,6 +156,8 @@
 <wire x1="19.05" y1="12.626975" x2="12.36345" y2="12.626975" width="0" layer="20"/>
 <wire x1="12.36345" y1="12.626975" x2="12.36345" y2="5.5499" width="0" layer="20"/>
 <wire x1="12.36345" y1="5.5499" x2="19.053175" y2="5.5499" width="0" layer="20"/>
+<text x="10.594975" y="13.509625" size="0.6096" layer="21" rot="R90">ExpressCarduino</text>
+<text x="6.276975" y="19.523075" size="1.6764" layer="22" rot="MR270">HokieGeek</text>
 </plain>
 <libraries>
 <library name="HokieGeek">
@@ -250,9 +252,14 @@
 <wire x1="-2" y1="0.2925" x2="2" y2="0.2925" width="0.127" layer="21"/>
 <wire x1="-2" y1="0.2925" x2="-2" y2="0.9925" width="0.127" layer="21"/>
 <wire x1="2" y1="0.2925" x2="2" y2="0.9925" width="0.127" layer="21"/>
-<wire x1="3.4925" y1="-5.0075" x2="-3.4925" y2="-5.0075" width="0.127" layer="21"/>
-<wire x1="3.25" y1="-10.08" x2="3.25" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="-3.25" y1="-10.08" x2="-3.25" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="3.4925" y1="-5.0075" x2="-3.4925" y2="-5.0075" width="0.127" layer="51"/>
+<wire x1="3.25" y1="-10.08" x2="3.25" y2="-5.08" width="0.127" layer="51"/>
+<wire x1="-3.25" y1="-10.08" x2="-3.25" y2="-5.08" width="0.127" layer="51"/>
+<polygon width="0.127" layer="21">
+<vertex x="3.81" y="1.27"/>
+<vertex x="-2.54" y="1.27"/>
+<vertex x="-3.81" y="1.27"/>
+</polygon>
 </package>
 <package name="TSSOP16">
 <description>&lt;b&gt;TSOP16&lt;/b&gt;&lt;p&gt;
@@ -813,7 +820,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="DIST" value="DIGIKEY" x="6.35" y="2.8575" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D1" library="HokieGeek" package="SOD-123" value="1N5819" x="11.2141" y="2.651125" rot="R270"/>
-<element name="USB" library="HokieGeek" package="MICRO-B-RA-SMT" value="" x="12.646025" y="9.11225" rot="R90"/>
+<element name="USB" library="HokieGeek" package="MICRO-B-RA-SMT" value="" x="12.646025" y="9.11225" smashed="yes" rot="R90">
+<attribute name="NAME" x="9.203875" y="9.880375" size="0.762" layer="25" rot="R270"/>
+<attribute name="VALUE" x="16.922525" y="13.60275" size="0.762" layer="27" rot="R180"/>
+</element>
 <element name="GPIO" library="SparkFun-Connectors" package="1X08_ROUND" value="" x="36.839525" y="21.561425" smashed="yes" rot="R180">
 <attribute name="NAME" x="16.7767" y="23.17115" size="0.8128" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="38.109525" y="24.736425" size="1.27" layer="27" rot="R180"/>

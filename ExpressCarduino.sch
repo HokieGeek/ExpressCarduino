@@ -289,9 +289,14 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <wire x1="-2" y1="0.2925" x2="2" y2="0.2925" width="0.127" layer="21"/>
 <wire x1="-2" y1="0.2925" x2="-2" y2="0.9925" width="0.127" layer="21"/>
 <wire x1="2" y1="0.2925" x2="2" y2="0.9925" width="0.127" layer="21"/>
-<wire x1="3.4925" y1="-5.0075" x2="-3.4925" y2="-5.0075" width="0.127" layer="21"/>
-<wire x1="3.25" y1="-10.08" x2="3.25" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="-3.25" y1="-10.08" x2="-3.25" y2="-5.08" width="0.127" layer="21"/>
+<wire x1="3.4925" y1="-5.0075" x2="-3.4925" y2="-5.0075" width="0.127" layer="51"/>
+<wire x1="3.25" y1="-10.08" x2="3.25" y2="-5.08" width="0.127" layer="51"/>
+<wire x1="-3.25" y1="-10.08" x2="-3.25" y2="-5.08" width="0.127" layer="51"/>
+<polygon width="0.127" layer="21">
+<vertex x="3.81" y="1.27"/>
+<vertex x="-2.54" y="1.27"/>
+<vertex x="-3.81" y="1.27"/>
+</polygon>
 </package>
 <package name="MICRO-B-TH">
 <description>&lt;h3&gt;Micro B USB Plug Assembly - Straight Through-hole&lt;/h3&gt;
@@ -3942,8 +3947,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 </sheets>
 <errors>
 <approved hash="102,1,15.24,91.44,GND_A,GND_USB,,,,"/>
-<approved hash="102,1,15.24,71.12,1.5V_A,1.5V,,,,"/>
-<approved hash="102,1,15.24,68.58,1.5V_B,1.5V,,,,"/>
 <approved hash="102,1,15.24,58.42,3.3V_A,VUSB,,,,"/>
 <approved hash="102,1,15.24,55.88,3.3V_B,VCC,,,,"/>
 <approved hash="102,1,15.24,43.18,GND_B,GND,,,,"/>
@@ -3957,12 +3960,15 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <approved hash="202,1,15.24,38.1,U$1,PERP0/SSRX+,,,,"/>
 <approved hash="104,1,78.74,15.24,U1,GND,GND_USB,,,"/>
 <approved hash="104,1,60.96,30.48,U1,VIN,VUSB,,,"/>
+<approved hash="104,1,55.88,109.22,IC1,VDD,VCC,,,"/>
+<approved hash="104,1,55.88,68.58,IC1,VSS,GND,,,"/>
+<approved hash="117,1,15.24,71.12,1.5V_A,,,,,"/>
+<approved hash="117,1,15.24,68.58,1.5V_B,,,,,"/>
 <approved hash="117,1,15.24,63.5,3.3V_AUX,,,,,"/>
 <approved hash="113,1,123.698,49.4877,USB,,,,,"/>
-<approved hash="113,1,87.0373,98.8653,GPIO,,,,,"/>
+<approved hash="113,1,87.0373,101.405,GPIO,,,,,"/>
 <approved hash="113,1,145.457,98.8653,ADC,,,,,"/>
-<approved hash="113,1,47.5827,99.2547,GPIO_I2C,,,,,"/>
-<approved hash="113,1,108.543,106.875,ADC_SEL,,,,,"/>
+<approved hash="113,1,131.403,16.7047,JP1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
