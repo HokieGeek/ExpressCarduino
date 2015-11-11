@@ -150,14 +150,25 @@
 <dimension x1="65.2275" y1="-0.3175" x2="65.2275" y2="27.4125" x3="68.5364875" y3="13.5475" textsize="1.778" layer="51"/>
 <dimension x1="0" y1="27.73" x2="65.0875" y2="27.73" x3="32.54375" y3="30.546021875" textsize="1.778" layer="51"/>
 <wire x1="19.053175" y1="0" x2="19.053175" y2="5.5499" width="0" layer="20"/>
-<wire x1="19.05" y1="12.626975" x2="19.05" y2="19.20875" width="0" layer="20"/>
-<wire x1="19.05" y1="19.20875" x2="38.76675" y2="19.177" width="0" layer="20"/>
-<wire x1="38.735" y1="27.6733" x2="38.76675" y2="19.177" width="0" layer="20"/>
+<wire x1="19.05" y1="12.626975" x2="19.05" y2="19.41195" width="0" layer="20"/>
+<wire x1="19.05" y1="19.41195" x2="38.76675" y2="19.3802" width="0" layer="20"/>
+<wire x1="38.735" y1="27.6733" x2="38.76675" y2="19.3802" width="0" layer="20"/>
 <wire x1="19.05" y1="12.626975" x2="12.36345" y2="12.626975" width="0" layer="20"/>
 <wire x1="12.36345" y1="12.626975" x2="12.36345" y2="5.5499" width="0" layer="20"/>
 <wire x1="12.36345" y1="5.5499" x2="19.053175" y2="5.5499" width="0" layer="20"/>
-<text x="10.594975" y="13.509625" size="0.6096" layer="21" rot="R90">ExpressCarduino</text>
-<text x="6.276975" y="19.523075" size="1.6764" layer="22" rot="MR270">HokieGeek</text>
+<text x="10.594975" y="13.103225" size="0.6096" layer="21" rot="R90">ExpressCarduino</text>
+<text x="13.83665" y="13.712825" size="0.6096" layer="21">SCL</text>
+<text x="13.7668" y="16.481425" size="0.6096" layer="21">SDA</text>
+<text x="13.700125" y="18.913475" size="0.6096" layer="21">COM</text>
+<text x="11.67765" y="13.376275" size="0.6096" layer="21" rot="R90">20151110</text>
+<text x="36.7157" y="23.3045" size="0.8128" layer="21">1</text>
+<text x="34.083625" y="23.17115" size="0.8128" layer="21">2</text>
+<text x="31.588075" y="23.17115" size="0.8128" layer="21">3</text>
+<text x="29.022675" y="23.237825" size="0.8128" layer="21">4</text>
+<text x="26.52395" y="23.237825" size="0.8128" layer="21">5</text>
+<text x="23.891875" y="23.237825" size="0.8128" layer="21">6</text>
+<text x="21.529675" y="23.17115" size="0.8128" layer="21">7</text>
+<text x="18.76425" y="23.237825" size="0.8128" layer="21">8</text>
 </plain>
 <libraries>
 <library name="HokieGeek">
@@ -799,7 +810,7 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="HokieGeek" package="EXPRESSCARD34" value="EXPRESSCARD34" x="1.5875" y="13.97"/>
+<element name="U$1" library="HokieGeek" package="EXPRESSCARD34" value="EXPRESSCARD34" x="1.5875" y="13.97" smashed="yes"/>
 <element name="R1" library="SparkFun-Resistors" package="0805" value="41.2K" x="14.3383" y="2.346325" rot="R270">
 <attribute name="PROD_ID" value="RES-09883" x="14.3383" y="2.346325" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
@@ -821,16 +832,16 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="D1" library="HokieGeek" package="SOD-123" value="1N5819" x="11.2141" y="2.651125" rot="R270"/>
 <element name="USB" library="HokieGeek" package="MICRO-B-RA-SMT" value="" x="12.646025" y="9.11225" smashed="yes" rot="R90">
-<attribute name="NAME" x="9.203875" y="9.880375" size="0.762" layer="25" rot="R270"/>
+<attribute name="NAME" x="9.22995" y="10.9025" size="0.762" layer="25"/>
 <attribute name="VALUE" x="16.922525" y="13.60275" size="0.762" layer="27" rot="R180"/>
 </element>
 <element name="GPIO" library="SparkFun-Connectors" package="1X08_ROUND" value="" x="36.839525" y="21.561425" smashed="yes" rot="R180">
-<attribute name="NAME" x="16.7767" y="23.17115" size="0.8128" layer="25" ratio="10" rot="R270"/>
+<attribute name="NAME" x="14.6431" y="21.1836" size="0.8128" layer="25" ratio="10"/>
 <attribute name="VALUE" x="38.109525" y="24.736425" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="U$2" library="HokieGeek" package="TSSOP16" value="SN74LV4051A" x="7.19455" y="24.74595" rot="R90"/>
 <element name="ADC" library="SparkFun-Connectors" package="1X08_ROUND" value="" x="36.91255" y="25.504775" smashed="yes" rot="R180">
-<attribute name="NAME" x="17.54505" y="24.317325" size="0.8128" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="17.548225" y="25.80005" size="0.8128" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="38.18255" y="28.679775" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="IC1" library="adafruit" package="QFN28-ML_6X6MM" value="MCP23017ML" x="6.41985" y="17.383125" smashed="yes">
