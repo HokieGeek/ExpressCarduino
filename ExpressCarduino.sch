@@ -278,8 +278,10 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <smd name="2" x="0.68175" y="1.7425" dx="1.5" dy="0.35" layer="1" rot="R90"/>
 <text x="-3.6" y="-3.705" size="0.762" layer="25" rot="R90">&gt;NAME</text>
 <text x="4.4905" y="-4.2765" size="0.762" layer="27" rot="R90">&gt;VALUE</text>
-<wire x1="-3.5" y1="0.9925" x2="-2" y2="0.9925" width="0.127" layer="21"/>
-<wire x1="2" y1="0.9925" x2="3.5" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="-3.5" y1="0.9925" x2="-3" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="-3" y1="0.9925" x2="-2" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="2" y1="0.9925" x2="3" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="3" y1="0.9925" x2="3.5" y2="0.9925" width="0.127" layer="21"/>
 <wire x1="3.5" y1="0.9925" x2="3.5" y2="-4.8625" width="0.127" layer="51"/>
 <wire x1="-3.5" y1="0.9925" x2="-3.5" y2="-4.8625" width="0.127" layer="51"/>
 <wire x1="3.5" y1="3.7925" x2="3.5" y2="0.9925" width="0.127" layer="21"/>
@@ -297,6 +299,12 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <vertex x="-2.54" y="1.27"/>
 <vertex x="-3.81" y="1.27"/>
 </polygon>
+<wire x1="3" y1="2.7925" x2="3" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="-3" y1="2.7925" x2="-3" y2="0.9925" width="0.127" layer="21"/>
+<wire x1="-3.01625" y1="2.8575" x2="-3.33375" y2="2.8575" width="0.127" layer="21"/>
+<wire x1="-3.33375" y1="2.8575" x2="-3.33375" y2="3.77825" width="0.127" layer="21"/>
+<wire x1="2.9845" y1="2.8575" x2="3.33375" y2="2.8575" width="0.127" layer="21"/>
+<wire x1="3.33375" y1="2.8575" x2="3.33375" y2="3.81" width="0.127" layer="21"/>
 </package>
 <package name="MICRO-B-TH">
 <description>&lt;h3&gt;Micro B USB Plug Assembly - Straight Through-hole&lt;/h3&gt;
@@ -3547,7 +3555,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GPIO" library="SparkFun-Connectors" deviceset="M08" device=""/>
-<part name="U$2" library="HokieGeek" deviceset="SN74LV4051A" device=""/>
+<part name="IC2" library="HokieGeek" deviceset="SN74LV4051A" device=""/>
 <part name="ADC" library="SparkFun-Connectors" deviceset="M08" device=""/>
 <part name="IC1" library="adafruit" deviceset="MCP23017" device="ML"/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="M03" device="PTH"/>
@@ -3570,7 +3578,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <instance part="GND4" gate="1" x="53.34" y="63.5"/>
 <instance part="GND5" gate="1" x="127" y="76.2"/>
 <instance part="GPIO" gate="G$1" x="88.9" y="104.14" rot="R180"/>
-<instance part="U$2" gate="G$1" x="127" y="99.06"/>
+<instance part="IC2" gate="G$1" x="127" y="99.06"/>
 <instance part="ADC" gate="G$1" x="147.32" y="101.6" rot="R180"/>
 <instance part="IC1" gate="G$1" x="68.58" y="88.9"/>
 <instance part="JP1" gate="G$1" x="127" y="15.24"/>
@@ -3585,7 +3593,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <label x="22.86" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="VCC"/>
+<pinref part="IC2" gate="G$1" pin="VCC"/>
 <wire x1="127" y1="116.84" x2="127" y2="119.38" width="0.1524" layer="91"/>
 <label x="127" y="119.38" size="1.778" layer="95"/>
 </segment>
@@ -3645,7 +3653,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <label x="111.76" y="55.88" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="127" y1="78.74" x2="127" y2="81.28" width="0.1524" layer="91"/>
 </segment>
@@ -3732,7 +3740,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <label x="43.18" y="30.48" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="!EN"/>
+<pinref part="IC2" gate="G$1" pin="!EN"/>
 <wire x1="111.76" y1="88.9" x2="106.68" y2="88.9" width="0.1524" layer="91"/>
 <label x="104.14" y="88.9" size="1.778" layer="95"/>
 </segment>
@@ -3795,49 +3803,49 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y0"/>
+<pinref part="IC2" gate="G$1" pin="Y0"/>
 <pinref part="ADC" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y1"/>
+<pinref part="IC2" gate="G$1" pin="Y1"/>
 <pinref part="ADC" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y2"/>
+<pinref part="IC2" gate="G$1" pin="Y2"/>
 <pinref part="ADC" gate="G$1" pin="3"/>
 </segment>
 </net>
 <net name="N$22" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y3"/>
+<pinref part="IC2" gate="G$1" pin="Y3"/>
 <pinref part="ADC" gate="G$1" pin="4"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y4"/>
+<pinref part="IC2" gate="G$1" pin="Y4"/>
 <pinref part="ADC" gate="G$1" pin="5"/>
 </segment>
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y5"/>
+<pinref part="IC2" gate="G$1" pin="Y5"/>
 <pinref part="ADC" gate="G$1" pin="6"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y6"/>
+<pinref part="IC2" gate="G$1" pin="Y6"/>
 <pinref part="ADC" gate="G$1" pin="7"/>
 </segment>
 </net>
 <net name="N$26" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="Y7"/>
+<pinref part="IC2" gate="G$1" pin="Y7"/>
 <pinref part="ADC" gate="G$1" pin="8"/>
 </segment>
 </net>
@@ -3901,14 +3909,14 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 <label x="137.16" y="12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$2" gate="G$1" pin="COM"/>
+<pinref part="IC2" gate="G$1" pin="COM"/>
 <wire x1="109.22" y1="96.52" x2="111.76" y2="96.52" width="0.1524" layer="91"/>
 <label x="99.06" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MUX_A" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="A"/>
+<pinref part="IC2" gate="G$1" pin="A"/>
 <wire x1="111.76" y1="109.22" x2="109.22" y2="109.22" width="0.1524" layer="91"/>
 <label x="104.14" y="109.22" size="1.778" layer="95"/>
 </segment>
@@ -3920,7 +3928,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 </net>
 <net name="MUX_B" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="B"/>
+<pinref part="IC2" gate="G$1" pin="B"/>
 <wire x1="111.76" y1="106.68" x2="109.22" y2="106.68" width="0.1524" layer="91"/>
 <label x="104.14" y="106.68" size="1.778" layer="95"/>
 </segment>
@@ -3932,7 +3940,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21952a.pdf</description>
 </net>
 <net name="MUX_C" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="C"/>
+<pinref part="IC2" gate="G$1" pin="C"/>
 <wire x1="111.76" y1="104.14" x2="109.22" y2="104.14" width="0.1524" layer="91"/>
 <label x="104.14" y="104.14" size="1.778" layer="95"/>
 </segment>
