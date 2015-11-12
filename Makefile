@@ -6,7 +6,7 @@ all: upload
 verify: $(SKETCH)
 	arduino --verify --board $(BOARD) $(SKETCH)
 
-upload: verify
+upload: $(SKETCH)
 	arduino --upload --board $(BOARD) $(SKETCH)
 
 .PHONY: all verify upload
