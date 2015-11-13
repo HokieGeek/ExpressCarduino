@@ -1,20 +1,20 @@
 #define buttonPin 2
 #define potPin A0
-#define connectedLedPin 13
+#define connectedLedPin 12
 
 String inputString = "";
 int potValue = -1;
 int targetPotValue = -1;
+bool haveHandshake = false;
 
 void setup() {
     Serial.begin(9600);
-
-    waitForHandshake();  // send a byte to establish contact until receiver responds
     Serial.setTimeout(3000); // TODO: this is only for the human typing this stuff
 
     inputString.reserve(200);
     potValue = analogRead(potPin); // Initialize the pot tracker
 
+    pinMode(connectedLedPin, OUTPUT);
     pinMode(buttonPin, INPUT);
 }
 
@@ -22,23 +22,15 @@ void loop() {
     // Poll the sensors and inputs
     pollPotentiometer();
     pollButton();
-
-    // Send out status?
-    // TODO: sendStatus();
-}
-
-void waitForHandshake() {
-    while (Serial.available() <= 0 || Serial.read() != ',') {
-      Serial.print('.');
-      delay(300);
-    }
-    Serial.println("hello");
-    digitalWrite(connectedLedPin, HIGH);
 }
 
 void serialEvent() {
     int input = 0;
     while (Serial.available()) {
+        if (!haveHandshake) {
+            waitForHandshake();  // send a byte to establish contact until receiver responds
+        }
+
         input = Serial.read();
         switch (input) {
         case '$':
@@ -57,6 +49,16 @@ void serialEvent() {
             break;
         }
     }
+}
+
+void waitForHandshake() {
+    while (Serial.available() <= 0 || Serial.read() != ',') {
+        Serial.print('.');
+        delay(300);
+    }
+    digitalWrite(connectedLedPin, HIGH);
+    haveHandshake = true;
+    Serial.print(':');
 }
 
 void pollPotentiometer() {
@@ -78,6 +80,6 @@ void pollPotentiometer() {
 
 void pollButton() {
     if (digitalRead(buttonPin) == HIGH) {
-      Serial.println("Press!!");
+        Serial.println("Press!!");
     }
 }
