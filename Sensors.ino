@@ -1,9 +1,15 @@
 #define buttonPin 2
 #define potPin A0
 
+#define photocellCount 2
+#define photocell1Pin A1
+#define photocell2Pin A2
+
 int potValue = -1;
 int targetPotValue = -1;
 String inputString = "";
+
+int photocellValues[3] = {0,0,0};
 
 void sensorsSetup() {
     potValue = analogRead(potPin); // Initialize the pot tracker
@@ -14,7 +20,15 @@ void sensorsSetup() {
 
 void sensorsLoop() {
     pollPotentiometer();
-    pollButton();
+
+    pollAmbientLight();
+
+    if (haveHandshake) {
+        writePotentiometer();
+        writeButton();
+
+        writeAmbientLight();
+    }
 }
 
 void sensorsSerialEvent(int input) {
@@ -40,7 +54,11 @@ void pollPotentiometer() {
     int currentPotValue = analogRead(potPin);
     if (currentPotValue != potValue && abs(currentPotValue - potValue) > 1) {
         potValue = currentPotValue;
+    }
+}
 
+void writePotentiometer() {
+    if (haveHandshake) {
         if (targetPotValue >= 0) {
             if (potValue == targetPotValue) {
                 Serial.print('!');
@@ -53,8 +71,25 @@ void pollPotentiometer() {
     }
 }
 
-void pollButton() {
+void writeButton() {
     if (digitalRead(buttonPin) == HIGH) {
         Serial.println("Press!!");
     }
+}
+
+void pollAmbientLight() {
+    photocellValues[1] = analogRead(photocell1Pin);
+    photocellValues[2] = analogRead(photocell2Pin);
+
+    photocellValues[0] = (photocellValues[1] + photocellValues[2]) / photocellCount;
+}
+
+void writeAmbientLight() {
+    // Serial.write(photocellValues, sizeof(int)*(photocellCount+1));
+    Serial.print(photocellValues[0]);
+    Serial.print(",");
+    Serial.print(photocellValues[1]);
+    Serial.print(",");
+    Serial.print(photocellValues[2]);
+    Serial.println("");
 }
