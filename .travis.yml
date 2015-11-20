@@ -3,4 +3,4 @@ addons:
   apt:
     packages:
     - arduino
-script: make
+script: make verify
