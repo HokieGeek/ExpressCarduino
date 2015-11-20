@@ -1,4 +1,4 @@
-# ExpressCardiuno
+# ExpressCardiuno [![Build Status](https://travis-ci.org/HokieGeek/ExpressCarduino.svg?branch=master)](https://travis-ci.org/HokieGeek/ExpressCarduino)
 My attempt to get some usefulness out of unused ports on my laptop by making use of the [ExpressCard slot](http://www.usb.org/developers/expresscard/EC_specifications/ExpressCard_2_0_FINAL.pdf) and adapting it to have [Adafruit's Metro Mini Arduino clone](https://www.adafruit.com/products/2590)
 
 ## Schematic and board
