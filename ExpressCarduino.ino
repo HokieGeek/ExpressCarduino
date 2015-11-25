@@ -1,4 +1,5 @@
 #define connectedLedPin 12
+#define ACK_CHAR ':'
 
 bool haveHandshake = false;
 
@@ -31,11 +32,11 @@ void serialEvent() {
 }
 
 void waitForHandshake() {
-    while (Serial.available() <= 0 || Serial.read() != ',') {
-        Serial.print('.');
+    while (Serial.available() <= 0 || Serial.read() != ',') { // TODO: this should be readBytes, I think
+        Serial.write('.');
         delay(300);
     }
     digitalWrite(connectedLedPin, HIGH);
     haveHandshake = true;
-    Serial.print(':');
+    Serial.write(ACK_CHAR);
 }
