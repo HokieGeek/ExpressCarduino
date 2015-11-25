@@ -1,5 +1,3 @@
-#define ACK_CHAR '.'
-
 #define buttonPin 2
 
 #define photocellCount 2
