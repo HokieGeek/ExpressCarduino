@@ -18,14 +18,21 @@ void loop() {
 void serialEvent() {
     int input = 0;
     while (Serial.available()) {
-        if (!haveHandshake) {
-            waitForHandshake();  // send a byte to establish contact until receiver responds
-        }
+        // if (!haveHandshake) {
+        //     waitForHandshake();  // send a byte to establish contact until receiver responds
+        // }
 
         input = Serial.read();
         switch (input) {
+        case ',':
+            digitalWrite(connectedLedPin, HIGH);
+            haveHandshake = true;
+            Serial.write(ACK_CHAR);
+            break;
         default:
-            sensorsSerialEvent(input);
+            if (haveHandshake) {
+                sensorsSerialEvent(input);
+            }
             break;
         }
     }

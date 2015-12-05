@@ -103,7 +103,7 @@ void writeAmbientLightASCII() {
 }
 
 void writeAmbientLight() {
-    Serial.write("L");
+    Serial.write('L');
     Serial.write((uint8_t)(photocellCount+1));
     Serial.write((uint8_t*)photocellValues, sizeof(photocellValues));
 }
@@ -122,7 +122,7 @@ int getTemperature() {
 }
 
 void writeTemperature() {
-    Serial.write("T");
+    Serial.write('T');
     Serial.write(getTemperature());
 }
 
