@@ -25,18 +25,29 @@ void sensorsSetup() {
 void sensorsLoop() {
     pollAmbientLight();
 
-    if (haveHandshake) {
+    if (haveConnection) {
         if (sendButtonState) {
-            writeButton();
+            if (displayAscii) {
+                writeButtonASCII();
+            } else {
+                writeButton();
+            }
         }
 
         if (sendAmbientLight) {
-            writeAmbientLightASCII();
+            if (displayAscii) {
+                writeAmbientLightASCII();
+            } else {
+                writeAmbientLight();
+            }
         }
 
         if (sendTemperature) {
-            // writeTemperatureASCII();
-            writeTemperature();
+            if (displayAscii) {
+                writeTemperatureASCII();
+            } else {
+                writeTemperature();
+            }
         }
     }
 }
@@ -81,8 +92,27 @@ void writeButtonASCII() {
 }
 
 void writeButton() {
-    Serial.write('B');
-    Serial.write(digitalRead(buttonPin));
+    // if (digitalRead(buttonPin) == HIGH) {
+        Serial.write('B');
+    // }
+    // Serial.write(digitalRead(buttonPin));
+    // int val = digitalRead(buttonPin);
+    int val = 1023; // digitalRead(buttonPin);
+    /*
+    char bytes[4];
+    bytes[0] = (val >> 24) & 0xFF;
+    bytes[1] = (val >> 16) & 0xFF;
+    bytes[2] = (val >> 8) & 0xFF;
+    bytes[3] = val & 0xFF;
+    Serial.write(bytes, 4);
+    */
+    /*
+    Serial.write((val >> 24) & 0xFF);
+    Serial.write((val >> 16) & 0xFF);
+    Serial.write((val >> 8) & 0xFF);
+    Serial.write(val & 0xFF);
+    */
+    Serial.write(val);
 }
 
 void pollAmbientLight() {
@@ -93,7 +123,7 @@ void pollAmbientLight() {
 }
 
 void writeAmbientLightASCII() {
-    Serial.print("L");
+    Serial.print('L');
     Serial.print(photocellValues[0]); // Average
     Serial.print(",");
     Serial.print(photocellValues[1]);
@@ -116,9 +146,9 @@ int getTemperature() {
 
     float tempC = (voltage - 0.5) * 100;
 
-    float tempF = (tempC * 9.0 / 5.0) + 32.0;
+    // float tempF = (tempC * 9.0 / 5.0) + 32.0;
 
-    return tempF;
+    return tempC;
 }
 
 void writeTemperature() {
@@ -127,7 +157,7 @@ void writeTemperature() {
 }
 
 void writeTemperatureASCII() {
-    Serial.print("T");
+    Serial.print('T');
     Serial.print(getTemperature());
     Serial.println("");
 }
