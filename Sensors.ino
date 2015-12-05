@@ -35,7 +35,8 @@ void sensorsLoop() {
         }
 
         if (sendTemperature) {
-            writeTemperatureASCII();
+            // writeTemperatureASCII();
+            writeTemperature();
         }
     }
 }
@@ -118,6 +119,11 @@ int getTemperature() {
     float tempF = (tempC * 9.0 / 5.0) + 32.0;
 
     return tempF;
+}
+
+void writeTemperature() {
+    Serial.write("T");
+    Serial.write(getTemperature());
 }
 
 void writeTemperatureASCII() {
