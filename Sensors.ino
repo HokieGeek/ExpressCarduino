@@ -112,7 +112,9 @@ void writeButton() {
     Serial.write((val >> 8) & 0xFF);
     Serial.write(val & 0xFF);
     */
-    Serial.write(val);
+    // TODO: might need to reverse these?
+    Serial.write(highByte(val));
+    Serial.write(lowByte(val));
 }
 
 void pollAmbientLight() {
